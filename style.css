@@ -1,0 +1,99 @@
+/* Устанавливаем общий стиль фона */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Черный фон */
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Стиль для контейнера с эмодзи */
+.emoji-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Стиль для инопланетянских эмодзи */
+.alien-emoji {
+    font-size: 50px;
+    color: limegreen;
+    position: absolute;
+    animation: blink 0.3s infinite; /* Быстрое мигание */
+    opacity: 0.5;
+}
+
+/* Стиль для центрального изображения инопланетянина */
+.alien-image-container {
+    z-index: 2;
+    position: relative;
+    width: 300px; /* Ширина изображения */
+    height: 400px; /* Высота изображения */
+}
+
+.alien-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 0 0; /* Применение округления верхней части */
+    box-shadow: 0 0 50px limegreen, 0 0 100px lime; /* Улучшенная тень */
+    animation: scaryEffect 0.1s infinite;
+}
+
+/* Стиль для неонового текста */
+.neon-text {
+    font-family: 'Courier New', Courier, monospace;
+    color: limegreen;
+    font-size: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+    z-index: 3;
+    display: inline-block;
+}
+
+/* Анимация мерцания для эмодзи */
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Анимация для неонового текста - каждая буква мерцает отдельно */
+@keyframes neonBlinkLetter {
+    0%, 100% {
+        text-shadow: 0 0 10px limegreen, 0 0 20px lime, 0 0 30px green;
+        opacity: 1;
+    }
+    50% {
+        text-shadow: 0 0 20px limegreen, 0 0 40px lime, 0 0 50px green;
+        opacity: 0.5;
+    }
+}
+
+/* Анимация для страшной картинки */
+@keyframes scaryEffect {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
